@@ -1,16 +1,13 @@
 import React from "react";
 import Task from "./Task";
 
-function TaskList({ tasks }) {
-  console.log(tasks)
-  
+function TaskList({ tasks, onHandleDeleteTask }) {
   const taskList = tasks.map((task, index) =>{
     return(
-      <Task key={index} {...task}/>
+      <Task key={index} {...task} onHandleDeleteTask={onHandleDeleteTask}/>
     )
   })
 
-  console.log(taskList)
   
   return (
     <div className="tasks">
